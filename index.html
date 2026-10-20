@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern UI Dashboard Component</title>
     <style>
-        /* Modern UI Styling & Design Tokens */
+        /* Modern UI Styling & Design Tokens - Light Theme */
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --card-bg: rgba(255, 255, 255, 0.06);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-color: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.5);
-            --success-color: #10b981;
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(226, 232, 240, 0.8);
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent-color: #4f46e5;
+            --accent-glow: rgba(79, 70, 229, 0.2);
+            --success-color: #059669;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -45,14 +45,14 @@
             padding: 32px;
             width: 100%;
             max-width: 400px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
             transition: var(--transition);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px var(--accent-glow);
+            border-color: rgba(79, 70, 229, 0.2);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1), 0 0 30px var(--accent-glow);
         }
 
         /* Header Layout */
@@ -64,7 +64,7 @@
         }
 
         .badge {
-            background: rgba(99, 102, 241, 0.15);
+            background: rgba(79, 70, 229, 0.1);
             color: var(--accent-color);
             padding: 6px 14px;
             border-radius: 100px;
@@ -72,7 +72,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(79, 70, 229, 0.2);
         }
 
         .status-dot {
@@ -80,7 +80,7 @@
             height: 8px;
             background-color: var(--success-color);
             border-radius: 50%;
-            box-shadow: 0 0 12px var(--success-color);
+            box-shadow: 0 0 8px rgba(5, 150, 105, 0.4);
         }
 
         /* Typography */
@@ -100,13 +100,14 @@
 
         /* Interactive Counter Section */
         .counter-section {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(241, 245, 249, 0.7);
             border-radius: 16px;
             padding: 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 24px;
+            border: 1px solid rgba(226, 232, 240, 0.5);
         }
 
         .counter-label {
@@ -138,12 +139,12 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
         }
 
         .btn:hover {
-            background: #4f46e5;
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+            background: #4338ca;
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
         }
 
         .btn:active {
@@ -162,7 +163,7 @@
         
         <main>
             <h2>Interactive Metrics</h2>
-            <p>A lightweight micro-frontend module highlighting sleek styling paradigms, optimal accessibility targets, and modern dark mode visuals.</p>
+            <p>A lightweight micro-frontend module highlighting sleek styling paradigms, optimal accessibility targets, and modern light mode visuals.</p>
             
             <section class="counter-section">
                 <span class="counter-label">Total Interactions</span>
