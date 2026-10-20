@@ -1,7 +1,7 @@
 /* General page styling */
 body {
-    background-color: #ffffff;
-    color: #1f2937;
+    background-color: #f0fdf4;
+    color: #166534;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 40px;
@@ -10,18 +10,18 @@ body {
 
 /* Main heading */
 h1 {
-    color: #2563eb;
+    color: #15803d;
     font-size: 40px;
 }
 
 /* Subheadings */
 h2 {
-    color: #374151;
+    color: #166534;
 }
 
 /* Paragraphs */
 p {
-    color: #4b5563;
+    color: #15803d;
     font-size: 18px;
 }
 
@@ -33,12 +33,12 @@ ul {
 
 li {
     margin: 10px;
-    color: #4b5563;
+    color: #166534;
 }
 
 /* Button */
 button {
-    background-color: #2563eb;
+    background-color: #16a34a;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -49,5 +49,5 @@ button {
 }
 
 button:hover {
-    background-color: #1d4ed8;
+    background-color: #15803d;
 }
