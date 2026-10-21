@@ -3,202 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern UI Dashboard Component</title>
+    <title>Analytics Dashboard</title>
     <style>
-        /* Modern UI Styling & Design Tokens - Dark Theme */
-        :root {
-            --bg-gradient: linear-gradient(135deg, #09090b 0%, #18181b 100%);
-            --card-bg: rgba(24, 24, 27, 0.8);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-primary: #f4f4f5;
-            --text-secondary: #a1a1aa;
-            --accent-color: #ef4444;
-            --accent-glow: rgba(239, 68, 68, 0.4);
-            --success-color: #22c55e;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        body {
-            background: var(--bg-gradient);
-            color: var(--text-primary);
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            height: 100vh;
         }
 
-        /* Glassmorphism Card Container */
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 32px;
-            width: 100%;
-            max-width: 400px;
+        .container {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 3rem;
+            border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transition: var(--transition);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(239, 68, 68, 0.3);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--accent-glow);
-        }
-
-        /* Header Layout */
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-        }
-
-        .badge {
+        .tag {
             background: rgba(239, 68, 68, 0.15);
-            color: var(--accent-color);
-            padding: 6px 14px;
-            border-radius: 100px;
+            color: #f87171;
+            padding: 6px 16px;
+            border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            display: inline-block;
+            margin-bottom: 1.5rem;
         }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--success-color);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
-        }
-
-        /* Typography */
-        h2 {
-            font-size: 1.5rem;
+        h1 {
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
+            margin: 0 0 1rem 0;
+            color: #ffffff;
+            letter-spacing: -0.5px;
         }
 
         p {
-            color: var(--text-secondary);
-            font-size: 0.925rem;
-            line-height: 1.5;
-            margin-bottom: 24px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
         }
 
-        /* Interactive Counter Section */
-        .counter-section {
-            background: rgba(39, 39, 42, 0.6);
-            border-radius: 16px;
-            padding: 16px;
+        .metric-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.2rem;
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 2rem;
         }
 
-        .counter-label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+        .metric-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
         }
 
-        .counter-value {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            transition: var(--transition);
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
         }
 
-        .counter-value.pulse {
-            transform: scale(1.1);
-            color: var(--accent-color);
-        }
-
-        /* Modern CTA Button */
-        .btn {
-            width: 100%;
-            background: var(--accent-color);
+        button {
+            background: #ef4444;
             color: white;
             border: none;
-            padding: 14px;
-            border-radius: 14px;
+            padding: 1rem 2rem;
             font-size: 1rem;
             font-weight: 600;
+            border-radius: 12px;
             cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            width: 100%;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
         }
 
-        .btn:hover {
+        button:hover {
             background: #dc2626;
-            box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
         }
 
-        .btn:active {
-            transform: scale(0.98);
+        button:active {
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
 
-    <!-- Semantic UI Component -->
-    <article class="card">
-        <header class="card-header">
-            <span class="badge">Analytics Dashboard</span>
-            <div class="status-dot" title="System Active"></div>
-        </header>
+    <div class="container">
+        <span class="tag">Analytics Dashboard</span>
+        <h1>Interactive Metrics</h1>
+        <p>A lightweight micro-frontend module highlighting sleek styling paradigms, optimal accessibility targets, and a dark mode visual aesthetic.</p>
         
-        <main>
-            <h2>Interactive Metrics</h2>
-            <p>A lightweight micro-frontend module highlighting sleek styling paradigms, optimal accessibility targets, and a dark mode visual aesthetic.</p>
-            
-            <section class="counter-section">
-                <span class="counter-label">Total Interactions</span>
-                <span id="counter" class="counter-value">0</span>
-            </section>
-        </main>
+        <div class="metric-box">
+            <span class="metric-label">Total Interactions</span>
+            <span class="metric-value" id="counter">0</span>
+        </div>
 
-        <footer>
-            <button id="actionBtn" class="btn">Trigger Interaction</button>
-        </footer>
-    </article>
+        <button onclick="incrementCounter()">Trigger Interaction</button>
+    </div>
 
-    <!-- UI State JavaScript Controller -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const button = document.getElementById('actionBtn');
-            const counterEl = document.getElementById('counter');
-            let count = 0;
-
-            button.addEventListener('click', () => {
-                count++;
-                
-                // Update text content safely
-                counterEl.textContent = count;
-                
-                // Add micro-interaction animation class
-                counterEl.classList.add('pulse');
-                
-                // Remove the class after the transition finishes to allow re-triggering
-                setTimeout(() => {
-                    counterEl.classList.remove('pulse');
-                }, 150);
-            });
-        });
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById('counter').innerText = count;
+        }
     </script>
+
 </body>
 </html>
